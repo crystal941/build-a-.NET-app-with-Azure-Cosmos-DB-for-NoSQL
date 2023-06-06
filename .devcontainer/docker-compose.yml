@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  dev:
+    image: mcr.microsoft.com/dotnet/sdk:7.0
+    command: sleep infinity
+    volumes:
+      - ..:/workspace
+    networks:
+      - default
+    depends_on:
+      - cosmos
+  cosmos:
+    image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator
+    restart: unless-stopped
+    expose:
+      - 8081
+    networks:
+      - default
+networks:
+  default:
+    driver: bridge

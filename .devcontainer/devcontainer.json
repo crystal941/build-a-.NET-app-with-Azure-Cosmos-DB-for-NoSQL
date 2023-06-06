@@ -1,0 +1,26 @@
+{
+    "image": "mcr.microsoft.com/dotnet/sdk:7.0",
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csharp",
+                "VisualStudioExptTeam.vscodeintellicode",
+                "ms-azuretools.vscode-cosmosdb"
+            ],
+            "settings": {
+                "omnisharp.defaultLaunchSolution": "cosmoschatgpt.sln",
+                "csharp.suppressDotnetRestoreNotification": true,
+                "csharp.suppressDotnetInstallWarning": true,
+                "csharp.suppressBuildAssetsNotification": true,
+                "explorer.sortOrder": "type",
+                "git.autofetch": true,
+                "files.autoSaveDelay": 1000,
+                "files.autoSave": "afterDelay",
+                "extensions.ignoreRecommendations": true
+            }
+        }
+    }
+}
